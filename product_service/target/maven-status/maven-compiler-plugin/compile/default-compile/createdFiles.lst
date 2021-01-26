@@ -1,0 +1,6 @@
+cn\itcast\product\entity\Product.class
+cn\itcast\product\service\impl\ProductServiceImpl.class
+cn\itcast\product\dao\ProductDao.class
+cn\itcast\product\controller\ProductController.class
+cn\itcast\product\service\ProductService.class
+cn\ProductApplication.class

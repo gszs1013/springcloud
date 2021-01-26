@@ -1,0 +1,32 @@
+#配置高可用性  起两个eureka server 彼此之间相互注册
+#服务1  端口 9000
+#服务2  端口 8000
+spring:
+  application:
+    name: eureka-server
+
+#高可用配置
+#server:
+#  port: 9000 #微服务端口
+#  #配置Eureka server
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+##    register-with-eureka: false #是否将自己注册到注册中心
+##    fetch-registry: false #是否从注册中心获取注册信息
+#    serviceUrl: #配置暴露给eureka client的请求地址
+#      defaultZone: http://${eureka.instance.hostname}:8000/eureka/
+
+#单个server配置
+server:
+  port: 9000 #微服务端口
+  #配置Eureka server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #是否将自己注册到注册中心
+    fetch-registry: false #是否从注册中心获取注册信息
+    serviceUrl: #配置暴露给eureka client的请求地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
